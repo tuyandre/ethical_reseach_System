@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\AuthenticateController;
+use App\Http\Controllers\LangController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//<Languages>
+
+Route::get('lang/home', 'LangController@index');
+Route::get('/lang/change', [LangController::class, 'change'])
+    ->name('changeLang');
+//</Languages>
+
+
+Route::get('/ethical/admin/register', [AuthenticateController::class, 'adminRegister'])
+    ->name('admin.register');
+Route::post('/admin/register', [AuthenticateController::class, 'saveFirstRegister'])
+    ->name('admin.store_register');
+
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';

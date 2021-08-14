@@ -6,9 +6,12 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laratrust\Traits\LaratrustUserTrait;
 
 class User extends Authenticatable
 {
+    use LaratrustUserTrait;
+    use HasProfilePhoto;
     use HasFactory, Notifiable;
 
     /**
@@ -17,9 +20,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'first_name','last_name' ,'email', 'password','gender','telephone','district1','country','district2','district3','education','fields','confirmed','activated'
+        ,'photo','date','role_id'
     ];
 
     /**
@@ -30,6 +32,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'two_factor_recovery_codes',
+        'two_factor_secret',
     ];
 
     /**
@@ -39,5 +43,12 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+    ];
+    public function Role()
+    {
+        return $this->belongsTo('App\Models\Role');
+    }
+    protected $appends = [
+        'profile_photo_url',
     ];
 }

@@ -25,12 +25,12 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => 'v8.5.23',
-    'version' => '8.5.23.0',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => 'b8c1998b928e23c5d975fa8b31a73316ae18fb36',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -437,12 +437,30 @@ private static $installed = array (
         0 => 'v8.53.1',
       ),
     ),
+    'kkszymanowski/traitor' => 
+    array (
+      'pretty_version' => '0.2.5',
+      'version' => '0.2.5.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '9770fc7de72ff585601dc9c42b31715d9fc40a24',
+    ),
     'kodova/hamcrest-php' => 
     array (
       'replaced' => 
       array (
         0 => '*',
       ),
+    ),
+    'laravel/breeze' => 
+    array (
+      'pretty_version' => 'v1.3.2',
+      'version' => '1.3.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '5d5ae9dd9547aad6cc3cf4a39812323635faff14',
     ),
     'laravel/framework' => 
     array (
@@ -455,12 +473,12 @@ private static $installed = array (
     ),
     'laravel/laravel' => 
     array (
-      'pretty_version' => 'v8.5.23',
-      'version' => '8.5.23.0',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => 'b8c1998b928e23c5d975fa8b31a73316ae18fb36',
     ),
     'laravel/sail' => 
     array (
@@ -470,6 +488,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '3e1aa8679b10ae9210eebfbc2ee5f3600f356702',
+    ),
+    'laravel/socialite' => 
+    array (
+      'pretty_version' => 'v5.2.4',
+      'version' => '5.2.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '59e2f8d9d9663029c7746a92d60bbb7697953bb9',
     ),
     'laravel/tinker' => 
     array (
@@ -506,6 +533,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '3b9dff8aaf7323590c1d2e443db701eb1f9aa0d3',
+    ),
+    'league/oauth1-client' => 
+    array (
+      'pretty_version' => '1.9.2',
+      'version' => '1.9.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '6247ffbf6b74fcc7f21313315b79e9b2560e68b0',
     ),
     'mockery/mockery' => 
     array (
@@ -791,8 +827,8 @@ private static $installed = array (
     array (
       'provided' => 
       array (
-        0 => '1.0|2.0',
-        1 => '1.0.0',
+        0 => '1.0.0',
+        1 => '1.0|2.0',
       ),
     ),
     'psr/simple-cache' => 
@@ -846,6 +882,15 @@ private static $installed = array (
       array (
         0 => '4.1.1',
       ),
+    ),
+    'santigarcor/laratrust' => 
+    array (
+      'pretty_version' => '6.3.2',
+      'version' => '6.3.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '9ab3bfdc06afe18b17f69b77cb77291c36dae9f6',
     ),
     'sebastian/cli-parser' => 
     array (
