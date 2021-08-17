@@ -11,7 +11,7 @@ use Laratrust\Traits\LaratrustUserTrait;
 class User extends Authenticatable
 {
     use LaratrustUserTrait;
-    use HasProfilePhoto;
+//    use HasProfilePhoto;
     use HasFactory, Notifiable;
 
     /**
@@ -48,7 +48,7 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Models\Role');
     }
-    protected $appends = [
-        'profile_photo_url',
-    ];
+//    protected $appends = [
+//        'profile_photo_url',
+//    ];
 }
