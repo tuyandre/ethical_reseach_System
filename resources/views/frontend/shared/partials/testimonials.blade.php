@@ -9,7 +9,7 @@
 								<div class="testimonial-slide-inner">
 									<div class="custom-row">
 										<div class="custom-col-5 testimonial-slide-image-col">
-											<img src="{{asset('/images/clients/client-1.png')}}" alt="Malana" loading="lazy">
+											<img src="{{asset('/public/frontend/images/clients/client-1.png')}}" alt="Malana" loading="lazy">
 										</div>
 										<div class="custom-col-7 testimonial-slide-content-col">
 											<div class="testimonial-content-holder">
@@ -25,7 +25,7 @@
 								<div class="testimonial-slide-inner">
 									<div class="custom-row">
 										<div class="custom-col-5 testimonial-slide-image-col">
-											<img src="{{asset('/images/clients/client-5.png')}}" alt="Ipsos" loading="lazy">
+											<img src="{{asset('/public/frontend/images/clients/client-5.png')}}" alt="Ipsos" loading="lazy">
 										</div>
 										<div class="custom-col-7 testimonial-slide-content-col">
 											<div class="testimonial-content-holder">
@@ -41,7 +41,7 @@
 								<div class="testimonial-slide-inner">
 									<div class="custom-row">
 										<div class="custom-col-5 testimonial-slide-image-col">
-											<img src="{{asset('/images/clients/client-3.png')}}" alt="Nielsen" loading="lazy">
+											<img src="{{asset('/public/frontend/images/clients/client-3.png')}}" alt="Nielsen" loading="lazy">
 										</div>
 										<div class="custom-col-7 testimonial-slide-content-col">
 											<div class="testimonial-content-holder">

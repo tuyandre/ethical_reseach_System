@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="{{asset('/public/frontend/css/module_41592108289_Features.min.css')}}">
     <link rel="stylesheet" href="{{asset('/public/frontend/css/module_41471930513_Button_type2.min.css')}}">
     <link rel="stylesheet" href="{{asset('/public/frontend/css/module_41512709220_Consumer_Research.min.css')}}">
-    <link rel="stylesheet" href="{{asset('/public/frontend/css/module_41470585515_Testimonial_slider.min.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('/public/frontend/css/module_41470585515_Testimonial_slider.min.css')}}">--}}
     <link rel="stylesheet" href="{{asset('/public/frontend/css/module_41584063577_Bottom_Pane.min.css')}}">
     <link rel="stylesheet" href="{{asset('/public/frontend/css/module_41462328234_Footer_Get_in_touch.min.css')}}">
     <link rel="stylesheet" href="{{asset('/public/frontend/css/module_41462374737_Footer_Social_Icons.min.css')}}">

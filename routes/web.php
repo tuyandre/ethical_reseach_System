@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AuthenticateController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\LangController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,43 @@ Route::get('lang/home', 'LangController@index');
 Route::get('/lang/change', [LangController::class, 'change'])
     ->name('changeLang');
 //</Languages>
+
+Route::get('/about_us', [FrontendController::class, 'about_us'])
+    ->name('frontend.about_us');
+
+Route::get('/our_partners', [FrontendController::class, 'our_partners'])
+    ->name('frontend.our_partners');
+Route::get('/consumer_studies', [FrontendController::class, 'consumer_studies'])
+    ->name('frontend.consumer_studies');
+
+Route::get('/contact_us', [FrontendController::class, 'contact_us'])
+    ->name('frontend.contact_us');
+
+Route::get('/careers', [FrontendController::class, 'careers'])
+    ->name('frontend.careers');
+Route::get('/faq', [FrontendController::class, 'frontend_faq'])
+    ->name('frontend.faq');
+Route::get('/resources', [FrontendController::class, 'resources'])
+    ->name('frontend.resources');
+Route::get('/terms_of_use', [FrontendController::class, 'terms_of_use'])
+    ->name('frontend.terms_of_use');
+Route::get('/privacy_policy', [FrontendController::class, 'privacy_policy'])
+    ->name('frontend.privacy_policy');
+//frontend cosumers routes
+Route::get('/Consumer/connect', [FrontendController::class, 'consumer_connect'])
+    ->name('frontend.consumer.connect');
+Route::get('/Consumer/data_analysis', [FrontendController::class, 'consumer_data_analysis'])
+    ->name('frontend.consumer.data_analysis');
+Route::get('/Consumer/data_visualization', [FrontendController::class, 'consumer_data_visualization'])
+    ->name('frontend.consumer.data_visualization');
+Route::get('/Consumer/questionnaire', [FrontendController::class, 'consumer_questionnaire'])
+    ->name('frontend.consumer.questionnaire');
+Route::get('/Consumer/sampling', [FrontendController::class, 'consumer_sampling'])
+    ->name('frontend.consumer.sampling');
+
+//end for frontend consumer routers
+
+
 
 
 Route::get('/ethical/admin/register', [AuthenticateController::class, 'adminRegister'])

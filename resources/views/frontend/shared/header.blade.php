@@ -15,21 +15,21 @@
                             <ul class="submenu level-1" aria-hidden="false">
                                 <li class="has-submenu menu-item"> <a href="javascript:;" class="menu-link">{{ __('header.our_solutions')}}</a>
                                     <ul class="submenu level-2" aria-hidden="true">
-                                        <li class="no-submenu menu-item"> <a href="#" class="menu-link">{{ __('header.our_solutions')}}</a>
+                                        <li class="no-submenu menu-item"> <a href="{{route('frontend.consumer_studies')}}" class="menu-link">{{ __('header.our_solutions')}}</a>
                                         </li>
-                                        <li class="no-submenu menu-item"> <a href="#" class="menu-link">{{ __('header.questionnaire_design') }}</a>
+                                        <li class="no-submenu menu-item"> <a href="{{route('frontend.consumer.questionnaire')}}" class="menu-link">{{ __('header.questionnaire_design') }}</a>
                                         </li>
-                                        <li class="no-submenu menu-item"> <a href="#" class="menu-link">{{ __('header.sampling') }}</a>
+                                        <li class="no-submenu menu-item"> <a href="{{route('frontend.consumer.sampling')}}" class="menu-link">{{ __('header.sampling') }}</a>
                                         </li>
-                                        <li class="no-submenu menu-item"> <a href="#" class="menu-link">{{ __('header.data_visualization')}}</a>
+                                        <li class="no-submenu menu-item"> <a href="{{route('frontend.consumer.data_visualization')}}" class="menu-link">{{ __('header.data_visualization')}}</a>
                                         </li>
-                                        <li class="no-submenu menu-item"> <a href="#" class="menu-link">{{ __('header.data_analysis')}}</a>
+                                        <li class="no-submenu menu-item"> <a href="{{route('frontend.consumer.data_analysis')}}" class="menu-link">{{ __('header.data_analysis')}}</a>
                                         </li>
-                                        <li class="no-submenu menu-item"> <a href="#" class="menu-link">{{ __('header.connect')}}</a>
+                                        <li class="no-submenu menu-item"> <a href="{{route('frontend.consumer.connect')}}" class="menu-link">{{ __('header.connect')}}</a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="no-submenu menu-item"> <a href="#" class="menu-link">{{ __('header.our_partners')}}</a>
+                                <li class="no-submenu menu-item"> <a href="{{route('frontend.our_partners')}}" class="menu-link">{{ __('header.our_partners')}}</a>
                                 </li>
                                 <li class="has-submenu menu-item"> <a href="javascript:;" class="menu-link">{{ __('header.resources')}}</a>
                                     <ul class="submenu level-2" aria-hidden="true">
@@ -37,15 +37,15 @@
                                         </li>--}}
                                         {{--<li class="no-submenu menu-item"> <a href="{{LaravelLocalization::localizeUrl('/resources#public_studies')}}" class="menu-link">Public Studies</a>
                                         </li>--}}
-                                        <li class="no-submenu menu-item"> <a href="#" class="menu-link">{{__('header.reports')}}</a>
+                                        <li class="no-submenu menu-item"> <a href="{{route('frontend.resources')}}#reports" class="menu-link">{{__('header.reports')}}</a>
                                         </li>
                                         <li class="no-submenu menu-item"> <a href="#" class="menu-link">Blog</a>
                                         </li>
-                                        <li class="no-submenu menu-item"> <a href="#" class="menu-link">{{__('header.help_center')}}</a>
+                                        <li class="no-submenu menu-item"> <a href="{{route('frontend.faq')}}" class="menu-link">{{__('header.help_center')}}</a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="no-submenu menu-item"> <a href="#" class="menu-link">{{__('header.about_us')}}</a>
+                                <li class="no-submenu menu-item"> <a href="{{route('frontend.about_us')}}" class="menu-link">{{__('header.about_us')}}</a>
                                 </li>
                             </ul>
                         </nav>
@@ -74,17 +74,17 @@
                                     <ul class="submenu level-1" aria-hidden="false">
                                         <li class="has-submenu menu-item"> <a href="javascript:;" class="menu-link">{{ __('header.our_solutions')}}</a>
                                             <ul class="submenu level-2" aria-hidden="true">
-                                                <li class="no-submenu menu-item"> <a href="#" class="menu-link">{{ __('header.our_solutions')}}</a>
+                                                <li class="no-submenu menu-item"> <a href="{{route('frontend.consumer_studies')}}" class="menu-link">{{ __('header.our_solutions')}}</a>
                                                 </li>
-                                                <li class="no-submenu menu-item"> <a href="#" class="menu-link">{{ __('header.questionnaire_design') }}</a>
+                                                <li class="no-submenu menu-item"> <a href="{{route('frontend.consumer.questionnaire')}}" class="menu-link">{{ __('header.questionnaire_design') }}</a>
                                                 </li>
-                                                <li class="no-submenu menu-item"> <a href="#" class="menu-link">{{ __('header.sampling') }}</a>
+                                                <li class="no-submenu menu-item"> <a href="{{route('frontend.consumer.sampling')}}" class="menu-link">{{ __('header.sampling') }}</a>
                                                 </li>
-                                                <li class="no-submenu menu-item"> <a href="#" class="menu-link">{{ __('header.data_visualization')}}</a>
+                                                <li class="no-submenu menu-item"> <a href="{{route('frontend.consumer.data_visualization')}}" class="menu-link">{{ __('header.data_visualization')}}</a>
                                                 </li>
-                                                <li class="no-submenu menu-item"> <a href="#" class="menu-link">{{ __('header.data_analysis')}}</a>
+                                                <li class="no-submenu menu-item"> <a href="{{route('frontend.consumer.data_analysis')}}" class="menu-link">{{ __('header.data_analysis')}}</a>
                                                 </li>
-                                                <li class="no-submenu menu-item"> <a href="#" class="menu-link">{{ __('header.connect')}}</a>
+                                                <li class="no-submenu menu-item"> <a href="{{route('frontend.consumer.connect')}}" class="menu-link">{{ __('header.connect')}}</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -96,15 +96,15 @@
                                                 </li>--}}
                                                 {{--<li class="no-submenu menu-item"> <a href="{{LaravelLocalization::localizeUrl('/resources#public_studies')}}" class="menu-link">Public Studies</a>
                                                 </li>--}}
-                                                <li class="no-submenu menu-item"> <a href="#" class="menu-link">{{__('header.reports')}}</a>
+                                                <li class="no-submenu menu-item"> <a href="{{route('frontend.resources')}}#reports" class="menu-link">{{__('header.reports')}}</a>
                                                 </li>
                                                 <li class="no-submenu menu-item"> <a href="#" class="menu-link">Blog</a>
                                                 </li>
-                                                <li class="no-submenu menu-item"> <a href="#" class="menu-link">{{__('header.help_center')}}</a>
+                                                <li class="no-submenu menu-item"> <a href="{{route('frontend.faq')}}" class="menu-link">{{__('header.help_center')}}</a>
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li class="no-submenu menu-item"> <a href="#" class="menu-link">{{__('header.about_us')}}</a>
+                                        <li class="no-submenu menu-item"> <a href="{{route('frontend.about_us')}}" class="menu-link">{{__('header.about_us')}}</a>
                                         </li>
                                     </ul>
                                 </nav>

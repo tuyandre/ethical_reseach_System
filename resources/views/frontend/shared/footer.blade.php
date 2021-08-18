@@ -7,14 +7,22 @@
                             <div id="hs_menu_wrapper_my_menu" class="hs-menu-wrapper active-branch flyouts hs-menu-flow-horizontal" role="navigation" data-sitemap-name="default" data-menu-id="41462377196" aria-label="Navigation Menu">
                                 <ul><li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="menu">
                                         <a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">{{__('footer.text_1')}}</a><ul class="hs-menu-children-wrapper">
-                                            <li class="hs-menu-item hs-menu-depth-2" role="menuitem"><a href="#" role="menuitem">{{__('footer.text_2')}}</a></li>
-                                            <li class="hs-menu-item hs-menu-depth-2" role="menuitem"><a href="#" role="menuitem">{{__('footer.text_3')}}</a></li></ul></li>
-                                    <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="menu"><a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">{{__('footer.text_4')}}</a>
-                                        <ul class="hs-menu-children-wrapper"><li class="hs-menu-item hs-menu-depth-2" role="menuitem"><a href="#" role="menuitem">{{__('footer.text_5')}}</a></li>
-                                            <li class="hs-menu-item hs-menu-depth-2" role="menuitem"><a href="#" role="menuitem">{{__('footer.text_6')}}</a></li></ul></li>
-                                    <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="menu"><a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">{{__('footer.text_7')}}</a>
-                                        <ul class="hs-menu-children-wrapper"><li class="hs-menu-item hs-menu-depth-2" role="menuitem"><a href="blog/en" role="menuitem">{{__('footer.text_8')}}</a></li>
-                  <li class="hs-menu-item hs-menu-depth-2" role="menuitem"><a href="#" role="menuitem">{{__('footer.text_11')}}</a></li></ul></li></ul></div></span>
+                                            <li class="hs-menu-item hs-menu-depth-2" role="menuitem">
+                                                <a href="{{route('frontend.consumer_studies')}}" role="menuitem">{{__('footer.text_2')}}</a></li>
+                                            <li class="hs-menu-item hs-menu-depth-2" role="menuitem">
+                                                <a href="{{route('frontend.our_partners')}}" role="menuitem">{{__('footer.text_3')}}</a></li></ul></li>
+                                    <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="menu">
+                                        <a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">{{__('footer.text_4')}}</a>
+                                        <ul class="hs-menu-children-wrapper"><li class="hs-menu-item hs-menu-depth-2" role="menuitem">
+                                                <a href="{{route('frontend.about_us')}}" role="menuitem">{{__('footer.text_5')}}</a></li>
+                                            <li class="hs-menu-item hs-menu-depth-2" role="menuitem">
+                                                <a href="{{route('frontend.careers')}}" role="menuitem">{{__('footer.text_6')}}</a></li></ul></li>
+                                    <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="menu">
+                                        <a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">{{__('footer.text_7')}}</a>
+                                        <ul class="hs-menu-children-wrapper"><li class="hs-menu-item hs-menu-depth-2" role="menuitem">
+                                                <a href="blog/en" role="menuitem">{{__('footer.text_8')}}</a></li>
+                  <li class="hs-menu-item hs-menu-depth-2" role="menuitem">
+                      <a href="{{route('frontend.faq')}}" role="menuitem">{{__('footer.text_11')}}</a></li></ul></li></ul></div></span>
                     </div>
                     <div class="custom-footer-social">
                         <div class="custom-ft-get">
@@ -26,7 +34,7 @@
 									</span> <span class="d-flex text-nowrap mt-2 align-items-center"> <i class="material-icons no-select mr-1">phone</i> <a onclick="sendEvent('Contact', 'click-footer-tel-Burundi');" class="text-white" href="tel://+257 79955478">
                                             <span class="d-block">Burundi:</span> +257 79955478</a>
 									</span> <span class="d-flex text-nowrap mt-2 align-items-center"> <i class="material-icons no-select mr-1">chat_bubble_outline</i>
-                                        <a class="d-block text-white" href="#">{{__('footer.text_18')}}</a> </span>
+                                        <a class="d-block text-white" href="{{url('/')}}">{{__('footer.text_18')}}</a> </span>
                                 </div>
                             </div>
                         </div>
@@ -86,7 +94,7 @@
                                             <div class="lang_switcher_class"><div class="globe_class" onclick="">
 									<ul class="lang_list_class">
                                             <select class="changeLang lang_switcher_link" style="width: 200px">
-                                                <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
+                                                <option value="en" selected {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
                                                 <option value="fr" {{ session()->get('locale') == 'fr' ? 'selected' : '' }}>France</option>
                                                 <option value="pt" {{ session()->get('locale') == 'pt' ? 'selected' : '' }}>Portugal</option>
                                         </select>
@@ -104,8 +112,8 @@
                         <div class="custom-ft-bottom-link">
                             <div id="hs_cos_wrapper_footer_block2" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
                                 <span id="hs_cos_wrapper_footer_block2_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><p>
-                                        <a href="#">Privacy Policy</a> <a href="#">Terms of use</a>
-                                        <a href="#">Legal terms</a></p></span>
+                                        <a href="{{route('frontend.privacy_policy')}}">Privacy Policy</a> <a href="{{route('frontend.terms_of_use')}}">Terms of use</a>
+                                        <a href="{{route('frontend.privacy_policy')}}">Legal terms</a></p></span>
                             </div>
                         </div>
                     </div>
