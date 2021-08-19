@@ -34,18 +34,24 @@
                     <a class="dropdown-item border-top" href="#">
                         <i class="fe fe-user"></i> My Profile
                     </a>
-                    <a class="dropdown-item" href="profile.html">
+                    <a class="dropdown-item" href="#">
                         <i class="fe fe-edit"></i> Edit Profile
                     </a>
-                    <a class="dropdown-item" href="profile.html">
+                    <a class="dropdown-item" href="#">
                         <i class="fe fe-settings"></i> Account Settings
                     </a>
-                    <a class="dropdown-item" href="profile.html">
+                    <a class="dropdown-item" href="#">
                         <i class="fe fe-compass"></i> Activity
                     </a>
-                    <a class="dropdown-item" href="signin.html">
+                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
                         <i class="fe fe-power"></i> Sign Out
                     </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                          style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
                 </div>
             </div>
             <div class="dropdown d-md-flex header-settings">

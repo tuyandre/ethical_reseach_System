@@ -108,6 +108,13 @@ Route::prefix('/Administration/')->middleware(['auth'])->group(
 
         Route::get('getUser/roleDetail/{id}', [RoleController::class, 'getRoleUser'])
             ->name('admin.roles.role_user');
+        Route::post('roles/attachPermission', [RoleController::class, 'attach_permission'])
+            ->name('admin.roles.attach_permission');
+
+        Route::get('roles/getPermission/{id}', [RoleController::class, 'getRolePermission'])
+            ->name('admin.roles.getRolePermission');
+        Route::post('roles/remove_permission', [RoleController::class, 'remove_permission'])
+            ->name('admin.roles.remove_permission');
 //        end for roles routes
 
 

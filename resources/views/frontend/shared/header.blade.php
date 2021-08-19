@@ -51,7 +51,16 @@
                         </nav>
                     </div>
                 </div>
+                @if (Route::has('login'))
+
                 <div class="custom-header-right-button desktop-menu">
+                    @auth
+                        <div class="header-login-btn">
+                            <div id="hs_cos_wrapper_login_button" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+                                <a class="hs-button btn btn-primary" href="{{ route('dashboard') }}" id="hs-button_login_button" rel=""> DASHBOARD </a>
+                            </div>
+                        </div>
+                    @else
                     <div class="header-login-btn">
                         <div id="hs_cos_wrapper_login_button" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
                             <a class="hs-button " href="{{ route('login') }}" id="hs-button_login_button" rel=""> {{__('header.login')}} </a>
@@ -63,7 +72,10 @@
                                 <a href="#book-a-demo" data-popup="modal">{{__('header.contact_us')}}</a></span>
                         </div>
                     </div>
+                    @endauth
                 </div>
+
+                @endif
                 <div class="custom-mobile-menu-wrapper">
                     <div class="custom-mobile-trigger"> <span></span>  <span></span>
                     </div>

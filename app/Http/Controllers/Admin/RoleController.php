@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Permission;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -88,5 +89,65 @@ class RoleController extends Controller
 
 
     }
+    public function remove_user($id,$role){
+        $user=User::find($id);
+        if ($user){
+            $role=Role::find($role);
+            if ($role){
+//                $user->role_id=$role->id;
+//                $user->save();
+                $user->detachRole($role);
+                return response()->json(['role' => "ok"], 200);
+            }
+        }
+        return response()->json(['role' => "not"], 500);
+    }
+    public function attach_user($id,$role){
+        $user=User::find($id);
+        if ($user){
+            $role=Role::find($role);
+            if ($role){
+                $user->role_id=$role->id;
+                $user->save();
+                $user->attachRole($role);
+                return response()->json(['role' => "ok"], 200);
+            }
+        }
+        return response()->json(['role' => "not"], 500);
+    }
+    public function attach_permission(Request $request){
+        $roles=Role::find($request['role']);
+        if ($roles){
+            $perm=Permission::find($request['permission']);
+            if ($perm){
+                $roles->attachPermission($perm);
+                return response()->json(['role' => "ok"], 200);
+            }
+        }
+        return response()->json(['role' => "not"], 500);
 
+    }
+    public function remove_permission(Request $request){
+        $roles=Role::find($request->role);
+        if ($roles){
+            $perm=Permission::find($request->permission);
+            if ($perm){
+                $roles->detachPermission($perm);
+                return response()->json(['role' => "ok"], 200);
+            }
+        }
+        return response()->json(['role' => "not"], 500);
+    }
+
+    public function getRolePermission($id){
+        $role=Role::find($id);
+        if ($role){
+//            $users = User::whereRoleIs($role->name)->get();
+//            return view('backend.privilege.roleDetail',['role'=>$role])->with('role',$role);
+            $permission=$role->permissions()->get();
+            return response()->json(['permission' => $permission], 200);
+        }
+        return redirect()->back();
+
+    }
 }
