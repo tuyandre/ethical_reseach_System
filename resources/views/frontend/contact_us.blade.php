@@ -1,7 +1,8 @@
 @extends('frontend.shared.master')
 @section('title','Ethical')
-@push('css')
-@endpush
+@section('css')
+
+@endsection
 @section('banner-section')
 
 
@@ -18,5 +19,7 @@
 
 
 @endsection
-@push('js')
-@endpush
+@section('js')
+
+@endsection
+

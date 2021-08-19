@@ -1,8 +1,11 @@
 @extends('frontend.shared.master')
 @section('title','Ethical')
-@push('css')
+@section('css')
     <link rel="stylesheet" href="{{asset('/public/frontend/css/module_41584317147_Our_offices.min.css')}}">
-@endpush
+    <link rel="stylesheet" href="{{asset('/public/frontend/hub_generated/module_assets/41583747239/1613446868470/module_41583747239_Leadership_team.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/public/frontend/hub_generated/module_assets/41512709220/1613472382565/module_41512709220_Consumer_Research.min-1.css')}}">
+
+@endsection
 @section('banner-section')
     <div class="container-fluid banner-area">
         <div class="row-fluid-wrapper">
@@ -268,5 +271,6 @@
 
 
 @endsection
-@push('js')
-@endpush
+@section('js')
+
+@endsection

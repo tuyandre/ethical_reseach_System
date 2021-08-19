@@ -1,8 +1,8 @@
 @extends('frontend.shared.master')
 @section('title','Ethical')
-@push('css')
+@section('css')
     <link rel="stylesheet" href="{{asset('/public/frontend/css/module_41470585515_Testimonial_slider.min.css')}}">
-@endpush
+    @endsection
 @section('banner-section')
 
     <div class="container-fluid banner-area">
@@ -79,7 +79,7 @@
                                         <div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
                                             <div id="hs_cos_wrapper_widget_1613471317961" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
                                                 <div class="btn-md-wrapper">
-                                                    <div class="btn-container center" style="padding-top:px; padding-bottom:px;"> <a data-popup="modal" class="hs-button" href="#book-a-demowidget_1613471317961">Get an estimate</a>
+                                                    <div class="btn-container center" style="padding-top:3px; padding-bottom:3px;"> <a data-popup="modal" class="hs-button" href="#book-a-demowidget_1613471317961">Get an estimate</a>
                                                     </div>
                                                 </div>
                                                 @include('frontend.shared.partials.book-demomodalwidget')
@@ -100,5 +100,6 @@
 
 
 @endsection
-@push('js')
-@endpush
+@section('js')
+    <script src="{{asset('/public/frontend/hub_generated/module_assets/41470585515/1613644587174/module_41470585515_Testimonial_slider.min.js')}}"></script>
+@endsection

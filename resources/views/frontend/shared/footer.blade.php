@@ -20,7 +20,7 @@
                                     <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="menu">
                                         <a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">{{__('footer.text_7')}}</a>
                                         <ul class="hs-menu-children-wrapper"><li class="hs-menu-item hs-menu-depth-2" role="menuitem">
-                                                <a href="blog/en" role="menuitem">{{__('footer.text_8')}}</a></li>
+                                                <a href="{{url('/')}}" role="menuitem">{{__('footer.text_8')}}</a></li>
                   <li class="hs-menu-item hs-menu-depth-2" role="menuitem">
                       <a href="{{route('frontend.faq')}}" role="menuitem">{{__('footer.text_11')}}</a></li></ul></li></ul></div></span>
                     </div>
@@ -112,8 +112,9 @@
                         <div class="custom-ft-bottom-link">
                             <div id="hs_cos_wrapper_footer_block2" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
                                 <span id="hs_cos_wrapper_footer_block2_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><p>
-                                        <a href="{{route('frontend.privacy_policy')}}">Privacy Policy</a> <a href="{{route('frontend.terms_of_use')}}">Terms of use</a>
-                                        <a href="{{route('frontend.privacy_policy')}}">Legal terms</a></p></span>
+                                        <a href="{{route('frontend.privacy_policy')}}">Privacy Policy</a>
+                                        <a href="{{route('frontend.terms_of_use')}}">Terms of use</a>
+                                        <a href="{{route('frontend.legal_terms')}}">Legal terms</a></p></span>
                             </div>
                         </div>
                     </div>
@@ -129,17 +130,18 @@
                             <ul><li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="menu">
                                     <a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">Meet Ethical Research Solutions</a><ul class="hs-menu-children-wrapper">
                                         <li class="hs-menu-item hs-menu-depth-2" role="menuitem">
-                                            <a href="#" role="menuitem">Our Solution</a></li><li class="hs-menu-item hs-menu-depth-2" role="menuitem">
-                                            <a href="#" role="menuitem">Clients</a></li></ul></li><li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="menu">
+                                            <a href="{{route('frontend.consumer_studies')}}" role="menuitem">Our Solution</a></li><li class="hs-menu-item hs-menu-depth-2" role="menuitem">
+                                            <a href="{{route('frontend.our_partners')}}" role="menuitem">Clients</a></li></ul></li><li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="menu">
                                     <a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">About us</a>
-                                    <ul class="hs-menu-children-wrapper"><li class="hs-menu-item hs-menu-depth-2" role="menuitem"><a href="#" role="menuitem">Company</a></li>
+                                    <ul class="hs-menu-children-wrapper"><li class="hs-menu-item hs-menu-depth-2" role="menuitem">
+                                            <a href="{{route('frontend.about_us')}}" role="menuitem">Company</a></li>
                                         <li class="hs-menu-item hs-menu-depth-2" role="menuitem">
-                                            <a href="#" role="menuitem">Careers</a></li></ul></li><li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="menu">
+                                            <a href="{{route('frontend.careers')}}" role="menuitem">Careers</a></li></ul></li><li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="menu">
                                     <a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">Resources</a>
                                     <ul class="hs-menu-children-wrapper"><li class="hs-menu-item hs-menu-depth-2" role="menuitem">
-                                            <a href="blog/en" role="menuitem">Blog</a></li>
+                                            <a href="{{url('/')}}" role="menuitem">Blog</a></li>
                                     <li class="hs-menu-item hs-menu-depth-2" role="menuitem">
-                                            <a href="#" role="menuitem">Help center</a></li></ul></li>
+                                            <a href="{{route('frontend.faq')}}" role="menuitem">Help center</a></li></ul></li>
                                 <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="menu">
                                     <a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">Get in touch</a><ul class="hs-menu-children-wrapper">
                                         <li class="hs-menu-item hs-menu-depth-2" role="menuitem">
@@ -147,7 +149,7 @@
                                         <li class="hs-menu-item hs-menu-depth-2" role="menuitem"><a href="tel://+1%20888-330-3667" role="menuitem">Rwanda:<br>+250 782 121 650</a></li>
                                         <li class="hs-menu-item hs-menu-depth-2" role="menuitem"><a href="tel://+33%201%2084%2067%2012%2084" role="menuitem">Burundi:<br>+257 79955478</a></li>
                                         <li class="hs-menu-item hs-menu-depth-2" role="menuitem">
-                                            <a href="#" role="menuitem">Contact Us</a></li></ul></li></ul></div></span>
+                                            <a href="{{route('frontend.contact_us')}}" role="menuitem">Contact Us</a></li></ul></li></ul></div></span>
                 </div>
             </div>
         </div>
@@ -220,9 +222,9 @@
                         <div class="custom-ft-bottom-link">
                             <div id="hs_cos_wrapper_footer_block2" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
                                 <span id="hs_cos_wrapper_footer_block2_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text">
-                                    <p> <a href="#">Privacy Policy</a>
-                                        <a href="#">Terms of use</a>
-                                        <a href="#">Legal terms</a></p></span>
+                                    <p> <a href="{{route('frontend.privacy_policy')}}">Privacy Policy</a>
+                                        <a href="{{route('frontend.terms_of_use')}}">Terms of use</a>
+                                        <a href="{{route('frontend.legal_terms')}}">Legal terms</a></p></span>
                             </div>
                         </div>
                     </div>

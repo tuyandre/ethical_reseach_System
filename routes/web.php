@@ -41,12 +41,20 @@ Route::get('/careers', [FrontendController::class, 'careers'])
     ->name('frontend.careers');
 Route::get('/faq', [FrontendController::class, 'frontend_faq'])
     ->name('frontend.faq');
-Route::get('/resources', [FrontendController::class, 'resources'])
+Route::get('/our_resources', [FrontendController::class, 'resources'])
     ->name('frontend.resources');
 Route::get('/terms_of_use', [FrontendController::class, 'terms_of_use'])
     ->name('frontend.terms_of_use');
 Route::get('/privacy_policy', [FrontendController::class, 'privacy_policy'])
     ->name('frontend.privacy_policy');
+Route::get('/legal_terms', [FrontendController::class, 'legal_terms'])
+    ->name('frontend.legal_terms');
+
+
+
+
+
+
 //frontend cosumers routes
 Route::get('/Consumer/connect', [FrontendController::class, 'consumer_connect'])
     ->name('frontend.consumer.connect');

@@ -1,7 +1,8 @@
 @extends('frontend.shared.master')
 @section('title','Ethical')
-@push('css')
-@endpush
+@section('css')
+    <link rel="stylesheet" href="{{asset('/public/frontend/css/module_41470585515_Testimonial_slider.min.css')}}">
+@endsection
 @section('banner-section')
 
     <div class="banner-section home-banner">
@@ -453,5 +454,6 @@
     </div>
 
 @endsection
-@push('js')
-@endpush
+@section('js')
+    <script src="{{asset('/public/frontend/hub_generated/module_assets/41470585515/1613644587174/module_41470585515_Testimonial_slider.min.js')}}"></script>
+@endsection

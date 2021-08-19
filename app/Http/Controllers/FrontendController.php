@@ -32,7 +32,9 @@ class FrontendController extends Controller
    }
 
 
-
+    public function legal_terms(){
+        return view('frontend.legal_terms');
+    }
 
 
    public function careers(){

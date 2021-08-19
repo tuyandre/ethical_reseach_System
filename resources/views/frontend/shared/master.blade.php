@@ -44,6 +44,10 @@
     <meta property="og:image:height" content="1854">
     <meta property="og:url" content="">
     <meta http-equiv="content-language" content="en">
+
+
+    @yield('css')
+
 </head>
 
 <body>
@@ -79,7 +83,7 @@
 <script src="{{asset('/public/frontend/js/module_41462098608_menu-section.min.js')}}"></script>
 <!--[if lte IE 8]> <script charset="utf-8" src="https://js.hsforms.net/forms/v2-legacy.js"></script> <![endif]-->
 <script src="{{asset('/public/frontend/js/v2.js')}}"></script>
-
+@yield('js')
 </body>
 
 </html>
