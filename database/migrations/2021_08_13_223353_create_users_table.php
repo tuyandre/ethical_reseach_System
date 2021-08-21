@@ -26,11 +26,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->boolean('confirmed')->default(false);
             $table->boolean('activated')->default(false);
-            $table->string('facebook_id')->nullable();
-            $table->string('google_id')->nullable();
-            $table->string('twitter_id')->nullable();
-            $table->string('linkedin_id')->nullable();
-            $table->string('instagram_id')->nullable();
+            $table->string('provider')->nullable();
+            $table->string('provider_id')->nullable();
             $table->string('gender')->nullable();
             $table->string('district1')->nullable();
             $table->string('district2')->nullable();

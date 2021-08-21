@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\LangController;
+use App\Http\Controllers\SocialController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -69,6 +70,9 @@ Route::get('/Consumer/sampling', [FrontendController::class, 'consumer_sampling'
 
 //end for frontend consumer routers
 
+
+Route::get('login/{provider}', [SocialController::class, 'redirect'])->name('auth.social.redirect');
+Route::get('login/{provider}/callback',[SocialController::class, 'Callback'])->name('auth.social.callback');
 
 
 
@@ -143,7 +147,30 @@ Route::prefix('/Administration/')->middleware(['auth'])->group(
         Route::get('/get/users', [UserController::class, 'getUserList'])
             ->name('admin.users.getUserList');
 
+        Route::get('/users/userDetail/{id}', [UserController::class, 'userDetail'])
+            ->name('admin.users.userDetail');
+        Route::get('users/getPermission/{id}', [UserController::class, 'getUserPermission'])
+            ->name('admin.users.getUserPermission');
+        Route::post('users/attachPermission', [UserController::class, 'attach_permission'])
+            ->name('admin.users.attach_permission');
+        Route::post('users/remove_permission', [UserController::class, 'remove_permission'])
+            ->name('admin.users.remove_permission');
+
+        Route::post('users/save_user', [UserController::class, 'save_user'])
+            ->name('admin.users.save_user');
+
+        Route::put('/users/deactivate/{id}', [UserController::class, 'deactivate_user'])
+            ->name('admin.users.deactivate_user');
+        Route::put('/users/activate/{id}', [UserController::class, 'activate_user'])
+            ->name('admin.users.activate_user');
 //        End for users routes
+
+
+
+        Route::get('/members', [UserController::class, 'members'])
+            ->name('admin.members.index');
+        Route::get('/get/members', [UserController::class, 'getMemberList'])
+            ->name('admin.members.getMemberList');
 
 });
 
