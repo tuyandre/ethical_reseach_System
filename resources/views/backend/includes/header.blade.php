@@ -28,8 +28,8 @@
                 </a>
                 <div class="dropdown-menu">
                     <div class="header-navheading">
-                        <h6 class="main-notification-title">Sonia Taylor</h6>
-                        <p class="main-notification-text">Web Designer</p>
+                        <h6 class="main-notification-title">{{Auth::user()->full_name}}</h6>
+                        <p class="main-notification-text">{{Auth::user()->role->display_name}}</p>
                     </div>
                     <a class="dropdown-item border-top" href="#">
                         <i class="fe fe-user"></i> My Profile

@@ -12,7 +12,7 @@
         <ul class="nav">
             <li class="nav-header"><span class="nav-label">Dashboard</span></li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><span class="shape1"></span><span class="shape2"></span>
+                <a class="nav-link" href="{{route('dashboard')}}"><span class="shape1"></span><span class="shape2"></span>
                     <i class="ti-home sidemenu-icon"></i><span class="sidemenu-label">Dashboard</span></a>
             </li>
             <li class="nav-item">

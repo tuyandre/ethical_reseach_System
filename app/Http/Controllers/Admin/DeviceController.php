@@ -5,6 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Device;
 use App\Models\DeviceTracking;
+use App\Models\User;
+use App\Notifications\Device\ReleaseNotification;
+//use Illuminate\Notifications\Notification;
+use Notification;
+use App\Notifications\Device\AssigningNotification;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -125,6 +130,18 @@ class DeviceController extends Controller
             $trace->received_date=Carbon::now();
             $trace->status=0;
             $trace->save();
+
+            $data=User::find($request['member']);
+            $assignData = [
+                'name' => 'ASSIGN DEVICE',
+                'body' => 'You have assigned a new Device Now on Date :'.Carbon::now().'The detail for Device are: Device Name: '.$device->device_name.'; Device Serial Number:'.$device->device_serialNo,
+                'thanks' => 'Thank you',
+                'member' => $data->full_name,
+                'assign_id' => $request['member']
+            ];
+
+            Notification::send($data, new AssigningNotification($assignData));
+
             return response()->json(['device' => "ok"], 201);
         }
     }
@@ -132,6 +149,7 @@ class DeviceController extends Controller
     public function releaseDevice($id){
         $device=Device::find($id);
         if ($device){
+            $user_id=$device->user_id;
             $device->status=1;
             $device->user_id=null;
             $device->received_date=null;
@@ -145,6 +163,17 @@ class DeviceController extends Controller
                 $trace->returned_date=Carbon::now();
                 $trace->status=1;
                 $trace->save();
+
+                $data=User::find($user_id);
+                $releaseData = [
+                    'name' => 'RELEASE DEVICE',
+                    'body' => 'You have Released a Assigned Device Now on Date :'.Carbon::now().'The detail for Device are:\n Device Name: '.$device->device_name.';\n Device Serial Number:'.$device->device_serialNo,
+                    'thanks' => 'Thank you',
+                    'member' => $data->full_name,
+                    'assign_id' =>$user_id
+                ];
+
+                Notification::send($data, new ReleaseNotification($releaseData));
                 return response()->json(['device' => "ok"], 201);
             }
         }
