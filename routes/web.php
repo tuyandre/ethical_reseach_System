@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AuthenticateController;
+use App\Http\Controllers\Admin\DeviceController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
@@ -171,6 +172,35 @@ Route::prefix('/Administration/')->middleware(['auth'])->group(
             ->name('admin.members.index');
         Route::get('/get/members', [UserController::class, 'getMemberList'])
             ->name('admin.members.getMemberList');
+
+
+//devices routes
+
+
+        Route::get('/devices', [DeviceController::class, 'index'])
+            ->name('admin.devices.index');
+        Route::get('/get/devices', [DeviceController::class, 'getDeviceList'])
+            ->name('admin.devices.getMemberList');
+
+        Route::post('devices/saveDevices', [DeviceController::class,'saveDevices'])->name('admin.devices.saveDevices');
+        Route::post('devices/updateDevices',[DeviceController::class,'updateDevices'])->name('admin.devices.updateDevices');
+        Route::get('/devices/admin/show/{id}',[DeviceController::class,'showDevice'])->name('admin.devices.showDevice');
+
+        Route::delete('/devices/admin/delete/{id}',[DeviceController::class,'destroyDevice'])->name('admin.devices.destroyDevice');
+
+        Route::get('devices/available_device',[DeviceController::class,'availableDevice'])->name('admin.devices.available_device');
+        Route::get('devices/getAvailableDevices',[DeviceController::class,'getAvailableDevices'])->name('admin.devices.getAvailableDevices');
+        Route::get('devices/unavailable_device',[DeviceController::class,'unavailableDevice'])->name('admin.devices.unavailable_device');
+        Route::get('devices/getUnavailableDevices',[DeviceController::class,'getUnavailableDevices'])->name('admin.devices.getUnavailableDevices');
+        Route::get('devices/historical',[DeviceController::class,'historical'])->name('admin.devices.historical');
+        Route::get('devices/getHistorical',[DeviceController::class,'getHistorical'])->name('admin.devices.getHistorical');
+
+        Route::post('devices/assignDevices',[DeviceController::class,'assignDevices'])->name('admin.devices.assignDevices');
+        Route::post('devices/releaseDevices/{id}',[DeviceController::class,'releaseDevice'])->name('admin.devices.releaseDevice');
+        Route::get('/devices/detail/{id}',[DeviceController::class,'deviceDetail'])->name('admin.devices.deviceDetail');
+
+
+//        end devices routes
 
 });
 

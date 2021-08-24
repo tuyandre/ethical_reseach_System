@@ -50,19 +50,19 @@
             <li class="nav-item">
                 <a class="nav-link with-sub" href="#"><span class="shape1"></span><span class="shape2"></span>
                     <i class="ti-mobile sidemenu-icon"></i>
-                    <span class="sidemenu-label">Devices</span><i class="angle fe fe-chevron-right"></i></a>
+                    <span class="sidemenu-label">DEVICES</span><i class="angle fe fe-chevron-right"></i></a>
                 <ul class="nav-sub">
                     <li class="nav-sub-item">
-                        <a class="nav-sub-link" href="#">All Devices</a>
+                        <a class="nav-sub-link" href="{{route('admin.devices.index')}}">All Devices</a>
                     </li>
                     <li class="nav-sub-item">
-                        <a class="nav-sub-link" href="#">Available Devices</a>
+                        <a class="nav-sub-link" href="{{route('admin.devices.available_device')}}">Available Devices</a>
                     </li>
                     <li class="nav-sub-item">
-                        <a class="nav-sub-link" href="#">Assigned Devices</a>
+                        <a class="nav-sub-link" href="{{route('admin.devices.unavailable_device')}}">Assigned Devices</a>
                     </li>
                     <li class="nav-sub-item">
-                        <a class="nav-sub-link" href="#">Historical</a>
+                        <a class="nav-sub-link" href="{{route('admin.devices.historical')}}">Historical</a>
                     </li>
                 </ul>
             </li>

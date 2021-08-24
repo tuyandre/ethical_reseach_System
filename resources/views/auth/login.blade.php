@@ -92,7 +92,7 @@
                 </div>
 
                 <div class="flex-c-m">
-                    <a href="{{route('auth.social.redirect',['provider','facebook'])}}" class="login100-social-item bg1">
+                    <a href="{{url('/login/facebook')}}" class="login100-social-item bg1">
                         <i class="fa fa-facebook"></i>
                     </a>
 

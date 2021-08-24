@@ -48,6 +48,14 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Models\Role');
     }
+    public function AssignedDevice()
+    {
+        return $this->hasMany('App\Models\Device','user_id');
+    }
+    public function DeviceTracking()
+    {
+        return $this->hasMany('App\Models\DeviceTracking','user_id');
+    }
 //    protected $appends = [
 //        'profile_photo_url',
 //    ];
