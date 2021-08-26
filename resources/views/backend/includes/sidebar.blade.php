@@ -66,7 +66,64 @@
                     </li>
                 </ul>
             </li>
-
+            <li class="nav-item">
+                <a class="nav-link with-sub" href="#"><span class="shape1"></span><span class="shape2"></span>
+                    <i class="ti-briefcase sidemenu-icon"></i>
+                    <span class="sidemenu-label">PROJECTS</span><i class="angle fe fe-chevron-right"></i></a>
+                <ul class="nav-sub">
+                    <li class="nav-sub-item">
+                        <a class="nav-sub-link" href="{{route('admin.projects.index')}}">Project List</a>
+                    </li>
+                    <li class="nav-sub-item">
+                        <a class="nav-sub-link" href="{{route('admin.files.index')}}">Projects File</a>
+                    </li>
+                    <li class="nav-sub-item">
+                        <a class="nav-sub-link" href="{{route('admin.invoices.index')}}">Projects Invoices</a>
+                    </li>
+                    <li class="nav-sub-item">
+                        <a class="nav-sub-link" href="{{route('admin.invoices.index')}}">Projects Expenses</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link with-sub" href="#"><span class="shape1"></span><span class="shape2"></span>
+                    <i class="ti-agenda sidemenu-icon"></i>
+                    <span class="sidemenu-label">SURVEY</span><i class="angle fe fe-chevron-right"></i></a>
+                <ul class="nav-sub">
+                    <li class="nav-sub-item">
+                        <a class="nav-sub-link" href="#">Survey List</a>
+                    </li>
+                    <li class="nav-sub-item">
+                        <a class="nav-sub-link" href="#">Send Survey</a>
+                    </li>
+                    <li class="nav-sub-item">
+                        <a class="nav-sub-link" href="#">Survey Results</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link with-sub" href="#"><span class="shape1"></span><span class="shape2"></span>
+                    <i class="ti-wallet sidemenu-icon"></i>
+                    <span class="sidemenu-label">CAREER</span><i class="angle fe fe-chevron-right"></i></a>
+                <ul class="nav-sub">
+                    <li class="nav-sub-item">
+                        <a class="nav-sub-link" href="#">Career List</a>
+                    </li>
+                    <li class="nav-sub-item">
+                        <a class="nav-sub-link" href="#">Available Career</a>
+                    </li>
+                    <li class="nav-sub-item">
+                        <a class="nav-sub-link" href="#">Career Applicants</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><span class="shape1"></span>
+                    <span class="shape2"></span>
+                    <i class="ti-server sidemenu-icon"></i>
+                    <span class="sidemenu-label">PAYLOL</span>
+                </a>
+            </li>
         </ul>
     </div>
 </div>

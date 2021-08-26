@@ -19,8 +19,8 @@ class ComposerStaticInit787b0edcd8f263124d0a710eb4b30600
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
-        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
+        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '23c18046f52bef3eea034657bafda50f' => __DIR__ . '/..' . '/symfony/polyfill-php81/bootstrap.php',
@@ -167,7 +167,9 @@ class ComposerStaticInit787b0edcd8f263124d0a710eb4b30600
         ),
         'C' => 
         array (
+            'Cviebrock\\EloquentSluggable\\' => 28,
             'Cron\\' => 5,
+            'Cocur\\Slugify\\' => 14,
             'Carbon\\' => 7,
         ),
         'B' => 
@@ -178,6 +180,7 @@ class ComposerStaticInit787b0edcd8f263124d0a710eb4b30600
         array (
             'Asm89\\Stack\\' => 12,
             'App\\' => 4,
+            'AidynMakhataev\\LaravelSurveyJs\\' => 31,
         ),
     );
 
@@ -498,9 +501,17 @@ class ComposerStaticInit787b0edcd8f263124d0a710eb4b30600
         array (
             0 => __DIR__ . '/../..' . '/database/factories',
         ),
+        'Cviebrock\\EloquentSluggable\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/cviebrock/eloquent-sluggable/src',
+        ),
         'Cron\\' => 
         array (
             0 => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron',
+        ),
+        'Cocur\\Slugify\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/cocur/slugify/src',
         ),
         'Carbon\\' => 
         array (
@@ -518,6 +529,10 @@ class ComposerStaticInit787b0edcd8f263124d0a710eb4b30600
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),
+        'AidynMakhataev\\LaravelSurveyJs\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/aidynmakhataev/laravelsurveyjs/src',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -531,11 +546,24 @@ class ComposerStaticInit787b0edcd8f263124d0a710eb4b30600
     );
 
     public static $classMap = array (
+        'AidynMakhataev\\LaravelSurveyJs\\LaravelSurveyJsServiceProvider' => __DIR__ . '/..' . '/aidynmakhataev/laravelsurveyjs/src/LaravelSurveyJsServiceProvider.php',
+        'AidynMakhataev\\LaravelSurveyJs\\app\\Http\\Controllers\\API\\SurveyAPIController' => __DIR__ . '/..' . '/aidynmakhataev/laravelsurveyjs/src/app/Http/Controllers/API/SurveyAPIController.php',
+        'AidynMakhataev\\LaravelSurveyJs\\app\\Http\\Controllers\\API\\SurveyResultAPIController' => __DIR__ . '/..' . '/aidynmakhataev/laravelsurveyjs/src/app/Http/Controllers/API/SurveyResultAPIController.php',
+        'AidynMakhataev\\LaravelSurveyJs\\app\\Http\\Controllers\\SurveyController' => __DIR__ . '/..' . '/aidynmakhataev/laravelsurveyjs/src/app/Http/Controllers/SurveyController.php',
+        'AidynMakhataev\\LaravelSurveyJs\\app\\Http\\Requests\\CreateSurveyRequest' => __DIR__ . '/..' . '/aidynmakhataev/laravelsurveyjs/src/app/Http/Requests/CreateSurveyRequest.php',
+        'AidynMakhataev\\LaravelSurveyJs\\app\\Http\\Requests\\UpdateSurveyRequest' => __DIR__ . '/..' . '/aidynmakhataev/laravelsurveyjs/src/app/Http/Requests/UpdateSurveyRequest.php',
+        'AidynMakhataev\\LaravelSurveyJs\\app\\Http\\Resources\\SurveyResource' => __DIR__ . '/..' . '/aidynmakhataev/laravelsurveyjs/src/app/Http/Resources/SurveyResource.php',
+        'AidynMakhataev\\LaravelSurveyJs\\app\\Http\\Resources\\SurveyResultResource' => __DIR__ . '/..' . '/aidynmakhataev/laravelsurveyjs/src/app/Http/Resources/SurveyResultResource.php',
+        'AidynMakhataev\\LaravelSurveyJs\\app\\Models\\Survey' => __DIR__ . '/..' . '/aidynmakhataev/laravelsurveyjs/src/app/Models/Survey.php',
+        'AidynMakhataev\\LaravelSurveyJs\\app\\Models\\SurveyResult' => __DIR__ . '/..' . '/aidynmakhataev/laravelsurveyjs/src/app/Models/SurveyResult.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Admin\\AuthenticateController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/AuthenticateController.php',
         'App\\Http\\Controllers\\Admin\\DeviceController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/DeviceController.php',
         'App\\Http\\Controllers\\Admin\\PermissionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/PermissionController.php',
+        'App\\Http\\Controllers\\Admin\\ProjectController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ProjectController.php',
+        'App\\Http\\Controllers\\Admin\\ProjectFileController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ProjectFileController.php',
+        'App\\Http\\Controllers\\Admin\\ProjectInvoiceController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ProjectInvoiceController.php',
         'App\\Http\\Controllers\\Admin\\RoleController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/RoleController.php',
         'App\\Http\\Controllers\\Admin\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UserController.php',
         'App\\Http\\Controllers\\Auth\\AuthenticatedSessionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AuthenticatedSessionController.php',
@@ -564,8 +592,11 @@ class ComposerStaticInit787b0edcd8f263124d0a710eb4b30600
         'App\\Models\\Device' => __DIR__ . '/../..' . '/app/Models/Device.php',
         'App\\Models\\DeviceTracking' => __DIR__ . '/../..' . '/app/Models/DeviceTracking.php',
         'App\\Models\\Permission' => __DIR__ . '/../..' . '/app/Models/Permission.php',
+        'App\\Models\\Project' => __DIR__ . '/../..' . '/app/Models/Project.php',
         'App\\Models\\Role' => __DIR__ . '/../..' . '/app/Models/Role.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Notifications\\Device\\AssigningNotification' => __DIR__ . '/../..' . '/app/Notifications/Device/AssigningNotification.php',
+        'App\\Notifications\\Device\\ReleaseNotification' => __DIR__ . '/../..' . '/app/Notifications/Device/ReleaseNotification.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -664,6 +695,25 @@ class ComposerStaticInit787b0edcd8f263124d0a710eb4b30600
         'Carbon\\Traits\\Units' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Units.php',
         'Carbon\\Traits\\Week' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Week.php',
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
+        'Cocur\\Slugify\\Bridge\\Laravel\\SlugifyFacade' => __DIR__ . '/..' . '/cocur/slugify/src/Bridge/Laravel/SlugifyFacade.php',
+        'Cocur\\Slugify\\Bridge\\Laravel\\SlugifyServiceProvider' => __DIR__ . '/..' . '/cocur/slugify/src/Bridge/Laravel/SlugifyServiceProvider.php',
+        'Cocur\\Slugify\\Bridge\\Latte\\SlugifyHelper' => __DIR__ . '/..' . '/cocur/slugify/src/Bridge/Latte/SlugifyHelper.php',
+        'Cocur\\Slugify\\Bridge\\League\\SlugifyServiceProvider' => __DIR__ . '/..' . '/cocur/slugify/src/Bridge/League/SlugifyServiceProvider.php',
+        'Cocur\\Slugify\\Bridge\\Nette\\SlugifyExtension' => __DIR__ . '/..' . '/cocur/slugify/src/Bridge/Nette/SlugifyExtension.php',
+        'Cocur\\Slugify\\Bridge\\Plum\\SlugifyConverter' => __DIR__ . '/..' . '/cocur/slugify/src/Bridge/Plum/SlugifyConverter.php',
+        'Cocur\\Slugify\\Bridge\\Symfony\\CocurSlugifyBundle' => __DIR__ . '/..' . '/cocur/slugify/src/Bridge/Symfony/CocurSlugifyBundle.php',
+        'Cocur\\Slugify\\Bridge\\Symfony\\CocurSlugifyExtension' => __DIR__ . '/..' . '/cocur/slugify/src/Bridge/Symfony/CocurSlugifyExtension.php',
+        'Cocur\\Slugify\\Bridge\\Symfony\\Configuration' => __DIR__ . '/..' . '/cocur/slugify/src/Bridge/Symfony/Configuration.php',
+        'Cocur\\Slugify\\Bridge\\Twig\\SlugifyExtension' => __DIR__ . '/..' . '/cocur/slugify/src/Bridge/Twig/SlugifyExtension.php',
+        'Cocur\\Slugify\\Bridge\\ZF2\\Module' => __DIR__ . '/..' . '/cocur/slugify/src/Bridge/ZF2/Module.php',
+        'Cocur\\Slugify\\Bridge\\ZF2\\SlugifyService' => __DIR__ . '/..' . '/cocur/slugify/src/Bridge/ZF2/SlugifyService.php',
+        'Cocur\\Slugify\\Bridge\\ZF2\\SlugifyViewHelper' => __DIR__ . '/..' . '/cocur/slugify/src/Bridge/ZF2/SlugifyViewHelper.php',
+        'Cocur\\Slugify\\Bridge\\ZF2\\SlugifyViewHelperFactory' => __DIR__ . '/..' . '/cocur/slugify/src/Bridge/ZF2/SlugifyViewHelperFactory.php',
+        'Cocur\\Slugify\\RuleProvider\\DefaultRuleProvider' => __DIR__ . '/..' . '/cocur/slugify/src/RuleProvider/DefaultRuleProvider.php',
+        'Cocur\\Slugify\\RuleProvider\\FileRuleProvider' => __DIR__ . '/..' . '/cocur/slugify/src/RuleProvider/FileRuleProvider.php',
+        'Cocur\\Slugify\\RuleProvider\\RuleProviderInterface' => __DIR__ . '/..' . '/cocur/slugify/src/RuleProvider/RuleProviderInterface.php',
+        'Cocur\\Slugify\\Slugify' => __DIR__ . '/..' . '/cocur/slugify/src/Slugify.php',
+        'Cocur\\Slugify\\SlugifyInterface' => __DIR__ . '/..' . '/cocur/slugify/src/SlugifyInterface.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',
@@ -675,6 +725,11 @@ class ComposerStaticInit787b0edcd8f263124d0a710eb4b30600
         'Cron\\HoursField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/HoursField.php',
         'Cron\\MinutesField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MinutesField.php',
         'Cron\\MonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
+        'Cviebrock\\EloquentSluggable\\ServiceProvider' => __DIR__ . '/..' . '/cviebrock/eloquent-sluggable/src/ServiceProvider.php',
+        'Cviebrock\\EloquentSluggable\\Services\\SlugService' => __DIR__ . '/..' . '/cviebrock/eloquent-sluggable/src/Services/SlugService.php',
+        'Cviebrock\\EloquentSluggable\\Sluggable' => __DIR__ . '/..' . '/cviebrock/eloquent-sluggable/src/Sluggable.php',
+        'Cviebrock\\EloquentSluggable\\SluggableObserver' => __DIR__ . '/..' . '/cviebrock/eloquent-sluggable/src/SluggableObserver.php',
+        'Cviebrock\\EloquentSluggable\\SluggableScopeHelpers' => __DIR__ . '/..' . '/cviebrock/eloquent-sluggable/src/SluggableScopeHelpers.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',

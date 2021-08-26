@@ -3,6 +3,9 @@
 use App\Http\Controllers\Admin\AuthenticateController;
 use App\Http\Controllers\Admin\DeviceController;
 use App\Http\Controllers\Admin\PermissionController;
+use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\ProjectFileController;
+use App\Http\Controllers\Admin\ProjectInvoiceController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\FrontendController;
@@ -201,6 +204,28 @@ Route::prefix('/Administration/')->middleware(['auth'])->group(
 
 
 //        end devices routes
+
+//        start for project routes
+
+        Route::get('/projects', [ProjectController::class, 'index'])->name('admin.projects.index');
+        Route::get('/get/projects', [ProjectController::class, 'getProjectList'])->name('admin.projects.getProjectList');
+
+        Route::post('projects/saveProject', [ProjectController::class,'saveProject'])->name('admin.projects.saveProject');
+        Route::post('projects/updateProjects',[ProjectController::class,'updateProject'])->name('admin.projects.updateDevices');
+        Route::get('/projects/admin/show/{id}',[ProjectController::class,'showProject'])->name('admin.projects.showDevice');
+
+
+//            The end for projects routes
+
+
+        Route::get('/project_files', [ProjectFileController::class, 'index'])->name('admin.files.index');
+        Route::get('/get/project_files', [ProjectFileController::class, 'getFileList'])->name('admin.files.getFileList');
+
+
+
+
+        Route::get('/projects/invoices', [ProjectInvoiceController::class, 'index'])->name('admin.invoices.index');
+        Route::get('/get/project_invoices', [ProjectInvoiceController::class, 'getInvoiceList'])->name('admin.invoices.getInvoiceList');
 
 });
 

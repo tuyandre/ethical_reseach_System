@@ -30,11 +30,20 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '311ce296486bc9b21fe2de95bea4e6774b8a5c71',
+    'reference' => '1d713d0dcd347bc9426307862923284e7ac8afb4',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
   array (
+    'aidynmakhataev/laravelsurveyjs' => 
+    array (
+      'pretty_version' => '1.0.0',
+      'version' => '1.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '81742cf43b0fb54dd82dafd679f7c1024b6dcc88',
+    ),
     'asm89/stack-cors' => 
     array (
       'pretty_version' => 'v2.0.3',
@@ -53,12 +62,30 @@ private static $installed = array (
       ),
       'reference' => 'dff976c2f3487d42c1db75a3b180e2b9f0e72ce0',
     ),
+    'cocur/slugify' => 
+    array (
+      'pretty_version' => 'v4.0.0',
+      'version' => '4.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '3f1ffc300f164f23abe8b64ffb3f92d35cec8307',
+    ),
     'cordoval/hamcrest-php' => 
     array (
       'replaced' => 
       array (
         0 => '*',
       ),
+    ),
+    'cviebrock/eloquent-sluggable' => 
+    array (
+      'pretty_version' => '8.0.8',
+      'version' => '8.0.8.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '16e21db24d80180f870c3c7c4faf3d3af23f4117',
     ),
     'davedevelopment/hamcrest-php' => 
     array (
@@ -478,7 +505,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '311ce296486bc9b21fe2de95bea4e6774b8a5c71',
+      'reference' => '1d713d0dcd347bc9426307862923284e7ac8afb4',
     ),
     'laravel/sail' => 
     array (
