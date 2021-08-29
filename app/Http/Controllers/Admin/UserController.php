@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\UsersExport;
 use App\Http\Controllers\Controller;
+use App\Imports\UsersImport;
 use App\Models\Permission;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class UserController extends Controller
 {
@@ -129,4 +132,13 @@ class UserController extends Controller
         return response()->json(['users' => $users], 200);
     }
 
+    public function fileImport(Request $request)
+    {
+        Excel::import(new UsersImport, $request->file('file_upload')->store('temp'));
+        return back();
+    }
+    public function fileExport()
+    {
+        return Excel::download(new UsersExport, 'users-collection.xlsx');
+    }
 }

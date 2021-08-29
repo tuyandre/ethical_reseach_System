@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\ProjectFileController;
 use App\Http\Controllers\Admin\ProjectInvoiceController;
 use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\SurveyController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\LangController;
@@ -177,6 +178,12 @@ Route::prefix('/Administration/')->middleware(['auth'])->group(
             ->name('admin.members.getMemberList');
 
 
+
+        Route::post('/users/file-import', [UserController::class, 'fileImport'])->name('admin.users.file-import');
+        Route::get('/users/file-export', [UserController::class, 'fileExport'])->name('admin.users.file-export');
+
+
+
 //devices routes
 
 
@@ -203,6 +210,11 @@ Route::prefix('/Administration/')->middleware(['auth'])->group(
         Route::get('/devices/detail/{id}',[DeviceController::class,'deviceDetail'])->name('admin.devices.deviceDetail');
 
 
+
+        Route::post('/devices/file-import', [DeviceController::class, 'fileImport'])->name('admin.devices.file-import');
+        Route::get('/devices/file-export', [DeviceController::class, 'fileExport'])->name('admin.devices.file-export');
+
+
 //        end devices routes
 
 //        start for project routes
@@ -227,7 +239,19 @@ Route::prefix('/Administration/')->middleware(['auth'])->group(
         Route::get('/projects/invoices', [ProjectInvoiceController::class, 'index'])->name('admin.invoices.index');
         Route::get('/get/project_invoices', [ProjectInvoiceController::class, 'getInvoiceList'])->name('admin.invoices.getInvoiceList');
 
-});
+
+
+
+        Route::get('/surveys', [SurveyController::class, 'index'])->name('admin.surveys.index');
+        Route::get('/get/surveys', [SurveyController::class, 'getSurveyList'])->name('admin.surveys.getSurveyList');
+        Route::get('/surveys/detail/{slug}',[SurveyController::class,'surveyDetail'])->name('admin.surveys.surveyDetail');
+        Route::get('/assign/surveys_assign', [SurveyController::class, 'assignSurvey'])->name('admin.surveys.assignSurvey');
+        Route::get('/get/surveys_member', [SurveyController::class, 'getMemberSurvey'])->name('admin.surveys.getMemberSurvey');
+        Route::post('/store/surveys', [SurveyController::class, 'sendSurvey'])->name('admin.surveys.sendSurvey');
+
+
+
+    });
 
 
 

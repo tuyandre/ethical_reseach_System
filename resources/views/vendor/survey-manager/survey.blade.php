@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{csrf_token()}}">
     <link rel="stylesheet" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('/public/vendor/survey-manager/css/survey.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/vendor/survey-manager/css/survey.css') }}" />
     <style>
         .mt-25 {
             margin-top: 25px;
@@ -34,6 +34,6 @@
         window.SurveyConfig = {!! json_encode(config('survey-manager')) !!};
     </script>
 
-    <script src="{{ asset('/public/vendor/survey-manager/js/survey-front.js') }}"></script>
+    <script src="{{ asset('/vendor/survey-manager/js/survey-front.js') }}"></script>
 </body>
 </html>

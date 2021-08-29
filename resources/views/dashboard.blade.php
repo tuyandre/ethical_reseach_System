@@ -60,9 +60,9 @@
                             <label class="main-content-label tx-13 font-weight-bold mb-1">Total Members</label>	<span class="d-block tx-12 mb-0 text-muted">Current Registered Panel Members</span>
                         </div>
                         <div class="card-item-body">
-<!--                            --><?php //$userss=\App\Models\User::where( 'role_id', '=',2)->get(); ?>
+                            <?php $userss=\App\Models\User::all(); ?>
                             <div class="card-item-stat">
-                                <h4 class="font-weight-bold">8</h4>
+                                <h4 class="font-weight-bold">{{$userss->count()}}</h4>
                                 <small><b class="text-success">55%</b> higher</small>
                             </div>
                         </div>
@@ -85,9 +85,9 @@
                             <label class="main-content-label tx-13 font-weight-bold mb-1">Total Survey</label>	<span class="d-block tx-12 mb-0 text-muted">Surveys Running this month</span>
                         </div>
                         <div class="card-item-body">
-<!--                            --><?php //$surveys=\App\Models\Survey::all(); ?>
+                        <?php $surveys=\AidynMakhataev\LaravelSurveyJs\app\Models\Survey::all(); ?>
                             <div class="card-item-stat">
-                                <h4 class="font-weight-bold">9</h4>
+                                <h4 class="font-weight-bold">{{$surveys->count()}}</h4>
                                 <small><b class="text-success">5%</b> Increased</small>
                             </div>
                         </div>
@@ -110,9 +110,9 @@
                             <label class="main-content-label tx-13 font-weight-bold mb-1">All Projects</label>	<span class="d-block tx-12 mb-0 text-muted">All projects conducted</span>
                         </div>
                         <div class="card-item-body">
-<!--                            --><?php //$project=\App\Models\Project::all(); ?>
+                        <?php $project=\App\Models\Project::all(); ?>
                             <div class="card-item-stat">
-                                <h4 class="font-weight-bold">4</h4>
+                                <h4 class="font-weight-bold">{{$project->count()}}</h4>
                                 <small><b class="text-danger">12%</b> decrease</small>
                             </div>
                         </div>

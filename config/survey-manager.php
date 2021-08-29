@@ -42,7 +42,7 @@ return [
     'pagination_perPage'        =>  12,
 
     // User model
-    'user_model'                =>  'App\User',
+    'user_model'                =>  'App\Models\User',
 
     // Default locale for survey
     'locale'                    =>  'en',

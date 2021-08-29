@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\DevicesExport;
 use App\Http\Controllers\Controller;
+use App\Imports\DevicesImport;
 use App\Models\Device;
 use App\Models\DeviceTracking;
 use App\Models\User;
 use App\Notifications\Device\ReleaseNotification;
 //use Illuminate\Notifications\Notification;
+use Maatwebsite\Excel\Facades\Excel;
 use Notification;
 use App\Notifications\Device\AssigningNotification;
 use Carbon\Carbon;
@@ -177,5 +180,15 @@ class DeviceController extends Controller
                 return response()->json(['device' => "ok"], 201);
             }
         }
+    }
+
+    public function fileImport(Request $request)
+    {
+        Excel::import(new DevicesImport, $request->file('file_upload')->store('temp'));
+        return back();
+    }
+    public function fileExport()
+    {
+        return Excel::download(new DevicesExport, 'devices-collection.xlsx');
     }
 }

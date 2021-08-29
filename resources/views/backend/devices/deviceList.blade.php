@@ -10,6 +10,12 @@
 @section('content_title','SYSTEM DEVICES')
 @section('content_target','All DEVICES')
 @section('action_buttons')
+    <button type="button" class="btn btn-info my-2 btn-icon-text" id="device_import">
+        <i class="fe fe-upload-cloud mr-2"></i> Import Device
+    </button>
+    <a type="button" href="{{route('admin.devices.file-export')}}" target="_blank" class="btn btn-secondary my-2 btn-icon-text" id="user_eport">
+        <i class="fe fe-download-cloud mr-2"></i> Export Device
+    </a>
     <button type="button" class="btn btn-primary my-2 btn-icon-text" id="add_devices">
         <i class="fe fe-user-plus mr-2"></i> Add New Devices
     </button>
@@ -297,6 +303,46 @@
     </div>
     <!-- End Basic modal -->
 
+    <!-- Basic modal -->
+    <div class="modal" id="DevicesImport">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title">Devices Import</h6>
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div id="add-messages"></div>
+                    <form action="{{route('admin.devices.file-import')}}" method="post" data-parsley-validate="" id="frmUpload" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+                        <div class="">
+                            <div class="row row-sm form-group">
+                                <div class="col-lg-12">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                Select File:
+                                            </div>
+                                        </div>
+
+                                        <input class="form-control" id="textMask" name="file_upload" placeholder="Select File" type="file" required accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" >
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn ripple btn-primary" id="btnUpload">Upload Devices</button>
+                            <button class="btn ripple btn-secondary" data-dismiss="modal"  type="button">Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <input type="hidden" value="{{ Session::token() }}" id="token">
 
 @endsection
@@ -369,6 +415,12 @@
         $(document).ready(function () {
             $("#add_devices").click(function () {
                 $("#addDevice").modal({
+                    backdrop: 'static',
+                    keyboard: false
+                });
+            });
+            $("#device_import").click(function () {
+                $("#DevicesImport").modal({
                     backdrop: 'static',
                     keyboard: false
                 });

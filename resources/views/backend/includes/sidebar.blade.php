@@ -91,14 +91,14 @@
                     <span class="sidemenu-label">SURVEY</span><i class="angle fe fe-chevron-right"></i></a>
                 <ul class="nav-sub">
                     <li class="nav-sub-item">
-                        <a class="nav-sub-link" href="#">Survey List</a>
+                        <a class="nav-sub-link" href="{{route('admin.surveys.index')}}">Survey List</a>
                     </li>
                     <li class="nav-sub-item">
-                        <a class="nav-sub-link" href="#">Send Survey</a>
+                        <a class="nav-sub-link" href="{{route('admin.surveys.assignSurvey')}}">Send Survey</a>
                     </li>
-                    <li class="nav-sub-item">
-                        <a class="nav-sub-link" href="#">Survey Results</a>
-                    </li>
+{{--                    <li class="nav-sub-item">--}}
+{{--                        <a class="nav-sub-link" href="#">Survey Results</a>--}}
+{{--                    </li>--}}
                 </ul>
             </li>
             <li class="nav-item">

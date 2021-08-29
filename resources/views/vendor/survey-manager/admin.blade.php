@@ -7,7 +7,7 @@
     <title>Survey Manager</title>
     <meta name="csrf-token" content="{{csrf_token()}}">
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('/public/vendor/survey-manager/css/survey.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/vendor/survey-manager/css/survey.css') }}" />
 </head>
 <body>
 
@@ -19,7 +19,7 @@
     {{--window.SurveyConfig = {{json_encode(config('survey-manager')) }};--}}
 </script>
 
-<script src="{{ asset('/public/vendor/survey-manager/js/survey-manager.js') }}"></script>
+<script src="{{ asset('/vendor/survey-manager/js/survey-manager.js') }}"></script>
 
 </body>
 </html>

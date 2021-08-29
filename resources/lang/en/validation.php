@@ -119,6 +119,12 @@ return [
     "url" => "The :attribute format is invalid.",
     "uuid" => "The :attribute must be a valid UUID.",
 
+    'survey' => [
+
+        'error' => [
+            'unique' => 'The combination [":survey", ":user"] already exists',
+        ]
+    ],
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines
