@@ -22,6 +22,16 @@ class UserController extends Controller
         return view('backend.users.userList');
     }
 
+    public function un_role(){
+        return view('backend.users.temporary_users');
+    }
+    public function getUnRoleUser(){
+        $users=User::with(['Role'])
+            ->doesntHave('roles')->get();
+
+        return response()->json(['users' => $users], 200);
+    }
+
     public function getUserList(){
         $users=User::with(['Role'])
             ->whereHas(
@@ -141,4 +151,27 @@ class UserController extends Controller
     {
         return Excel::download(new UsersExport, 'users-collection.xlsx');
     }
+
+
+
+
+
+    public function controlRole(Request $request){
+        $rol=$request['role'];
+        $dat=$request['user'];
+        $user=User::find($dat);
+        if ($rol==0){
+            $role=Role::find($user->role_id);
+            $user->user_id=null;
+            $user->save();
+            $user->detachRole($role);
+        }else{
+            $role1=Role::find($rol);
+            $user->role_id=$role1->id;
+            $user->save();
+            $user->attachRole($role1);
+        }
+        return response()->json(['role' => "ok"], 200);
+    }
+
 }

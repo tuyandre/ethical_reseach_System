@@ -149,6 +149,20 @@ class DeviceController extends Controller
         }
     }
 
+
+    public function destroyDevice($id){
+        $info=Device::find($id);
+        $histo=DeviceTracking::with(['User','Device'])->where('device_id','=',$id)
+            ->orderBy('id','DESC')
+            ->get();
+        if ($histo->count()>0){
+            return response()->json(['device' => "not"], 500);
+        }else{
+            $info->delete();
+            return response()->json(['device' => "ok"], 201);
+        }
+    }
+
     public function releaseDevice($id){
         $device=Device::find($id);
         if ($device){

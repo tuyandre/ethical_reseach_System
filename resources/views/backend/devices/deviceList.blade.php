@@ -388,8 +388,13 @@
                             url_more = url_more.replace(':id', row.id);
                             var url_show='{{route("admin.devices.showDevice",":id")}}';
                             url_show=url_show.replace(':id',row.id);
+
                             var url_release='{{route("admin.devices.releaseDevice",":id")}}';
                             url_release=url_release.replace(':id',row.id);
+
+                            var url_delete='{{route("admin.devices.destroyDevice",":id")}}';
+                            url_delete=url_delete.replace(':id',row.id);
+
                             if(data==1){
 
                                 return"<a  href='"+url_more+"' class='btn btn-info btn-sm btn-flat js-detail' data-id='" + data +
@@ -397,12 +402,16 @@
                                     "<button class='btn btn-primary btn-sm btn-flat js-assign ' data-id='" + row.id +
                                     "' data-url='" + url_show + "'> <i class='fa fa-send'></i>Assign</button>" +
                                     "<button class='btn btn-secondary btn-sm btn-flat js-edit ' data-id='" + row.id +
-                                    "' data-url='" + url_show + "'> <i class='fa fa-pen'></i>Edit</button>";
+                                    "' data-url='" + url_show + "'> <i class='fa fa-pen'></i>Edit</button>"+
+                                    "<button class='btn btn-danger btn-sm btn-flat js-delete' data-id='" + data +
+                                    "' data-url='" + url_delete + "'> <i class='fa fa-trash'></i>Delete</button>";
                             }else {
                                 return "<a  href='"+url_more+"' class='btn btn-info btn-sm btn-flat js-detail' data-id='" + row.id +
                                     "' > <i class='fa fa-eye'></i>View</a>" +
                                     "<button class='btn btn-success btn-sm btn-flat js-confirm' data-id='" + data +
-                                    "' data-url='" + url_release + "'> <i class='fa fa-check'></i>Release</button>";
+                                    "' data-url='" + url_release + "'> <i class='fa fa-check'></i>Release</button>" +
+                                    "<button class='btn btn-danger btn-sm btn-flat js-delete' data-id='" + data +
+                                    "' data-url='" + url_delete + "'> <i class='fa fa-trash'></i>Delete</button>";
                             }
 
                         }
@@ -701,6 +710,37 @@
                 })
             });
 
+            manageTable.on('click', '.js-delete', function () {
+                var button = $(this);
+                bootbox.confirm("Are you sure you want to Delete  this Device?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: button.attr('data-url'),
+                            method: 'post',
+                            data: {_token: $('#token').val()},
+                            success: function (data) {
+                                console.log(data);
+                                var tr = button.parents("tr");
+                                bootbox.alert({
+                                    title: "success",
+                                    message: "<i class='fa fa-warning'></i>" +
+                                        " Device Delete successful"
+                                });
+                                table.rows(tr).remove().draw(false);
+                                table.destroy();
+                                myFunc();
+                            }, error: function () {
+                                bootbox.alert({
+                                    title: "Error",
+                                    message: "<i class='fa fa-warning'></i>" +
+                                        " Device Not Deleted ,Because it has Historical Data"
+                                });
+                            }
+                        });
+
+                    }
+                })
+            });
         });
 
 

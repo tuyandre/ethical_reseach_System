@@ -10,6 +10,9 @@
 @section('content_title','SYSTEM USERS/MEMBERS')
 @section('content_target','USERS DETAIL')
 @section('action_buttons')
+    <button type="button" class="btn btn-secondary my-2 btn-icon-text" id="attach_role">
+        <i class="fe fe-shield mr-2"></i> Control Role
+    </button>
     <button type="button" class="btn btn-primary my-2 btn-icon-text" id="attach_permission">
         <i class="fe fe-shield mr-2"></i> Assign New Permission
     </button>
@@ -248,6 +251,55 @@
         </div>
     </div>
 
+    <div class="modal" id="attachRole">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title">Assign/Remove Role</h6>
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div id="add-messages2"></div>
+                    <form action="{{route('admin.users.controlRole')}}" method="post" data-parsley-validate="" id="frmSaveRole">
+                        {{ csrf_field() }}
+                        <div class="">
+                            <div class="row row-sm form-group">
+                                <div class="col-lg-12">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                Select Role:
+                                            </div>
+                                        </div>
+
+                                        <?php
+
+                                        $roles=\App\Models\Role::all();
+                                        ?>
+
+                                        <select name="role" class="form-control select2">
+                                            <option value="">Select Role</option>
+                                            <option value="0">Remove Current Role</option>
+                                            @foreach($roles as $role)
+                                                <option value="{{$role->id}}">{{$role->display_name}}</option>
+                                            @endforeach
+                                        </select>
+
+                                        <input class="form-control" id="user_id2" name="user" type="hidden">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn ripple btn-primary" id="btnSave2">SAVE</button>
+                            <button class="btn ripple btn-secondary" data-dismiss="modal"  type="button">Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <input type="hidden" value="{{ Session::token() }}" id="token">
 
@@ -288,6 +340,78 @@
         myFunc_permission();
 
 
+        $("#attach_role").click(function () {
+            $("#attachRole").modal({
+                backdrop: 'static',
+                keyboard: false
+            });
+            console.log(user_id);
+            $("#user_id2").val(user_id);
+
+            $('#frmSaveRole').submit(function (e) {
+                e.preventDefault();
+                var form = $(this);
+                var btn = $('#btnSave2');
+                btn.button('loading');
+                $.ajax({
+                    url: form.attr('action'),
+                    method: form.attr('method'),
+                    data: form.serialize()
+                }).done(function (data) {
+                    console.log(data);
+
+                    if (data.role == "ok") {
+                        btn.button('reset');
+                        form[0].reset();
+                        // reload the table
+                        table_permission.destroy();
+                        myFunc_permission();
+                        $('#add-messages2').html('<div class="alert alert-success flat">' +
+                            '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                            '<strong><i class="glyphicon glyphicon-ok-sign"></i></strong> Role  successfully Attached. </div>');
+
+                        $(".alert-success").delay(500).show(10, function () {
+                            $(this).delay(3000).hide(10, function () {
+                                $(this).remove();
+                            });
+                        });
+                        location.reload();
+                    }
+                }).fail(function (response) {
+                    console.log(response.responseJSON);
+
+                    btn.button('reset');
+//                    showing errors validation on pages
+
+                    var option = "";
+                    option += response.responseJSON.message;
+                    var data = response.responseJSON.errors;
+                    $.each(data, function (i, value) {
+                        console.log(value);
+                        if (i == 'name') {
+                            $('#tname').html(value[0])
+                        }
+                        $.each(value, function (j, values) {
+                            option += '<p>' + values + '</p>';
+                        });
+                    });
+                    $('#add-messages2').html('<div class="alert alert-danger flat">' +
+                        '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                        '<strong><i class="glyphicon glyphicon-remove"></i></strong><b>oops:</b>' + option + '</div>');
+
+                    $(".alert-success").delay(500).show(10, function () {
+                        $(this).delay(3000).hide(10, function () {
+                            $(this).remove();
+                        });
+                    });
+
+                    //alert("Internal server error");
+                });
+                return false;
+            });
+
+        });
+
 
         $("#attach_permission").click(function () {
             $("#attachPermission").modal({
@@ -295,8 +419,7 @@
                 keyboard: false
             });
 
-            console.log(user_id);
-            $("#user_id").val(user_id);
+
 
 
             $('#frmSave').submit(function (e) {

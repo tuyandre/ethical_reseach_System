@@ -161,6 +161,16 @@ Route::prefix('/Administration/')->middleware(['auth'])->group(
         Route::post('users/remove_permission', [UserController::class, 'remove_permission'])
             ->name('admin.users.remove_permission');
 
+        Route::post('users/controlRole', [UserController::class, 'controlRole'])
+            ->name('admin.users.controlRole');
+
+
+        Route::get('/users/user_without_role', [UserController::class, 'un_role'])
+            ->name('admin.users.un_role');
+        Route::get('/get/getUnRoleUser', [UserController::class, 'getUnRoleUser'])
+            ->name('admin.users.getUnRoleUser');
+
+
         Route::post('users/save_user', [UserController::class, 'save_user'])
             ->name('admin.users.save_user');
 
@@ -208,6 +218,7 @@ Route::prefix('/Administration/')->middleware(['auth'])->group(
         Route::post('devices/assignDevices',[DeviceController::class,'assignDevices'])->name('admin.devices.assignDevices');
         Route::post('devices/releaseDevices/{id}',[DeviceController::class,'releaseDevice'])->name('admin.devices.releaseDevice');
         Route::get('/devices/detail/{id}',[DeviceController::class,'deviceDetail'])->name('admin.devices.deviceDetail');
+        Route::post('devices/destroyDevices/{id}',[DeviceController::class,'destroyDevice'])->name('admin.devices.destroyDevice');
 
 
 

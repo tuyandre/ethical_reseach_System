@@ -37,6 +37,9 @@
                         <a class="nav-sub-link" href="{{route('admin.users.index')}}">USERS</a>
                     </li>
                     <li class="nav-sub-item">
+                        <a class="nav-sub-link" href="{{route('admin.users.un_role')}}">USERS WITHOUT ROLE</a>
+                    </li>
+                    <li class="nav-sub-item">
                         <a class="nav-sub-link" href="{{route('admin.members.index')}}">MEMBERS</a>
                     </li>
 
