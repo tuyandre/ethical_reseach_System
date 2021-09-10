@@ -162,7 +162,7 @@ class UserController extends Controller
         $user=User::find($dat);
         if ($rol==0){
             $role=Role::find($user->role_id);
-            $user->user_id=null;
+            $user->role_id=null;
             $user->save();
             $user->detachRole($role);
         }else{
