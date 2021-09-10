@@ -275,6 +275,11 @@
                                             ->whereHas(
                                                 'roles', function($q){
                                                 $q->where('name', 'supervisor');
+                                                $q->orWhere('name', 'admin');
+                                                $q->orWhere('name', 'enumerator');
+                                                $q->orWhere('name', 'moderator');
+                                                $q->orWhere('name', 'project_manager');
+                                                $q->orWhere('name', 'senior_manager');
                                                 $q->orWhere('name', 'manager');
                                             }
                                             )->get();
